@@ -29,8 +29,9 @@ app.get('/api/v1/users', (req, res) => {
   res.send( { "name": "Mike", "age": 30, "address": "123 Main St" } );
   });
 
-app.listen(3000, function() {
-  console.log('サーバーがポート3000で起動しました');
-  console.log('http://localhost:3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function() {
+  console.log(`サーバーがポート${PORT}で起動しました`);
+  console.log(`http://localhost:${PORT}`);
 });
 
